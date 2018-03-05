@@ -1,11 +1,17 @@
 <% include head.ejs %>
-<title>Movies - My movie website</title>
-<h1>Movies</h1>
+<title>Endless </title>
+<h1>You've answered: </h1>
 <% for (var index = 0; index < data.length; index++) { %>
-<h2><a href="/<%= data[index].id %>"><%= data[index].title %></a></h2>
-<p><%= data[index].plot %></p>
+  <h3>
+    <a href="/<%= data[index].id %>">
+      <%= data[index].question %>
+    </a>
+  </h3>
+  <p>
+    <%= data[index].answer %>
+  </p>
 <% } %>
 <p>
-  <a href=/add>Add a movie</a>
+  <a href="/<%= data[data.length - 1].id + 1 %>">More questions</a>
 </p>
 <% include tail.ejs %>
